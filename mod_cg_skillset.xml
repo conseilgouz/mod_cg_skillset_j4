@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="4.0" client="site" method="upgrade">
+	<name>CG SkillSet</name>
+	<author>ConseilGouz</author>
+	<creationDate>2021-04-21</creationDate>
+	<version>1.0.0</version>
+	<authorEmail>pascal.leconte@conseilgouz.com</authorEmail>
+	<authorUrl>https://www.conseilgouz.com</authorUrl>
+	<description>MOD_CG_SKILLSET_XML_DESCRIPTION</description>
+	<copyright>Copyright (C) 2024 Conseilgouz. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<namespace path="src">ConseilGouz\Module\CGSkillset</namespace>
+	<changelogurl>https://raw.githubusercontent.com/conseilgouz/mod_cg_skillset_j4/master/mod_cg_skillset_changelog.xml</changelogurl>	
+	<files>
+		<folder module="mod_cg_skillset">services</folder>
+        <folder>src</folder>
+		<folder>tmpl</folder>
+		<folder>forms</folder>
+        <filename>index.html</filename>
+	</files>
+	<media folder="media" destination="mod_cg_skillset">
+		<folder>css</folder>
+        <folder>js</folder>
+        <filename>index.html</filename>
+	</media>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/mod_cg_skillset.ini</language>
+		<language tag="en-GB">en-GB/mod_cg_skillset.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldprefix="ConseilGouz\Module\CGSkillset\Site\Field">
+				<field name="version" type="version"  margintop="-3em" extension="mod_cg_skillset"/>
+				<field name="skillsets" type="subform" formsource="/modules/mod_cg_skillset/forms/cg_skillset.xml" multiple="true" label="MOD_CG_SKILLSET_CREATE_LABEL"/>
+			</fieldset>
+			<fieldset name="options">
+				<field name="IconPosition" type="radio" class="btn-group btn-group-yesno" label="MOD_CG_SKILLSET_ICON_POSITION_LABEL" description="MOD_CG_SKILLSET_ICON_POSITION_DESC" default="top">
+					<option value="top">MOD_CG_SKILLSET_ICON_POSITION_TOP</option>
+					<option value="right">JGLOBAL_RIGHT</option>
+					<option value="bottom">MOD_CG_SKILLSET_ICON_POSITION_BOTTOM</option>
+					<option value="left">JGLOBAL_LEFT</option>
+				</field>
+				<field name="numberPosition" type="radio" class="btn-group btn-group-yesno" label="MOD_CG_SKILLSET_NUMBER_POSITION_LABEL" description="MOD_CG_SKILLSET_NUMBER_POSITION_DESC" default="below">
+					<option value="above">MOD_CG_SKILLSET_NUMBER_POSITION_ABOVE</option>
+					<option value="below">MOD_CG_SKILLSET_NUMBER_POSITION_BELOW</option>
+				</field>
+				<field name="symbolPosition" type="radio" label="MOD_CG_SKILLSET_SYMBOL_POSITION_LABEL" class="btn-group btn-group-yesno" description="MOD_CG_SKILLSET_SYMBOL_POSITION_DESC" default="default">
+					<option value="default">JDEFAULT</option>
+					<option value="sup">MOD_CG_SKILLSET_SUP_LABEL</option>
+				</field>
+				<field name="note11" type="note" label="MOD_CG_SKILLSET_CUSTOM_COLORS_HEADING_LABEL" description="MOD_CG_SKILLSET_CUSTOM_COLORS_HEADING_DESC" />
+				<field name="customsStyle" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_CG_SKILLSET_CUSTOM_STYLE_LABEL" description="MOD_CG_SKILLSET_CUSTOM_STYLE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="titleColor" type="color" label="MOD_CG_SKILLSET_TITLE_COLOR_LABEL" showon="customsStyle:1" default="#42495b" />
+				<field name="numberColor" type="color" label="MOD_CG_SKILLSET_NUMBER_COLOR_LABEL" showon="customsStyle:1" default="#373738" />
+				<field name="symbolColor" type="color" label="MOD_CG_SKILLSET_SYMBOL_COLOR_LABEL" showon="customsStyle:1" default="#373738" />
+				<field name="iconColor" type="color" label="MOD_CG_SKILLSET_ICON_COLOR_LABEL" showon="customsStyle:1" default="#03a9f5" />
+				<field name="titleSize" type="number" min="10" label="MOD_CG_SKILLSET_TITLE_SIZE_LABEL" hint="20" showon="customsStyle:1" default="20" />
+				<field name="numberSize" type="number" min="10" label="MOD_CG_SKILLSET_NUMBER_SIZE_LABEL" hint="32" showon="customsStyle:1" default="32" />
+				<field name="symbolSize" type="number" min="10" label="MOD_CG_SKILLSET_SYMBOL_SIZE_LABEL" hint="28" showon="customsStyle:1" default="28" />
+				<field name="iconSize" type="number" min="10" label="MOD_CG_SKILLSET_ICON_SIZE_LABEL" hint="28" showon="customsStyle:1" default="28" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" default="default" />
+				<field name="moduleclass_sfx" type="textarea" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" rows="3"/>
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="mod_cg_skillset">https://raw.githubusercontent.com/conseilgouz/updates_github/master/mod_cg_skillset_update.xml</server>
+	</updateservers>
+    
+</extension>
