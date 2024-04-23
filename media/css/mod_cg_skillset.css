@@ -11,6 +11,7 @@
 
 .counter-wrapper .counter-text-container {
 	text-align: center;
+    z-index:10;
 }
 
 .counter-sub-container .counter-wrapper .counter-text-container .counter-number {
@@ -42,11 +43,11 @@
 }
 
 .counter-sub-container .counter-wrapper .counter-text-container+.counter-icon {
-	margin-top: 20px;
+	 margin-top: 10px;
 }
 
 .counter-sub-container .counter-wrapper .counter-icon+.counter-text-container {
-	margin-top: 20px;
+	/*margin-top: 20px; */
 }
 
 .counter-sub-container .counter-wrapper .counter-icon img {
@@ -116,4 +117,17 @@
 	.counter-sub-container.jd-icon-position-right .counter-wrapper {
 		justify-content: normal;
 	}
+}
+
+.circular-progress {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:auto;
+}
+.inner-circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #d3d3d3;
 }

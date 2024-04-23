@@ -2,8 +2,8 @@
 <extension type="module" version="4.0" client="site" method="upgrade">
 	<name>CG SkillSet</name>
 	<author>ConseilGouz</author>
-	<creationDate>2021-04-21</creationDate>
-	<version>1.0.0</version>
+	<creationDate>2021-04-23</creationDate>
+	<version>1.1.0</version>
 	<authorEmail>pascal.leconte@conseilgouz.com</authorEmail>
 	<authorUrl>https://www.conseilgouz.com</authorUrl>
 	<description>MOD_CG_SKILLSET_XML_DESCRIPTION</description>
@@ -53,15 +53,23 @@
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
-				<field name="titleColor" type="color" label="MOD_CG_SKILLSET_TITLE_COLOR_LABEL" showon="customsStyle:1" default="#42495b" />
-				<field name="numberColor" type="color" label="MOD_CG_SKILLSET_NUMBER_COLOR_LABEL" showon="customsStyle:1" default="#373738" />
-				<field name="symbolColor" type="color" label="MOD_CG_SKILLSET_SYMBOL_COLOR_LABEL" showon="customsStyle:1" default="#373738" />
-				<field name="iconColor" type="color" label="MOD_CG_SKILLSET_ICON_COLOR_LABEL" showon="customsStyle:1" default="#03a9f5" />
-				<field name="titleSize" type="number" min="10" label="MOD_CG_SKILLSET_TITLE_SIZE_LABEL" hint="20" showon="customsStyle:1" default="20" />
-				<field name="numberSize" type="number" min="10" label="MOD_CG_SKILLSET_NUMBER_SIZE_LABEL" hint="32" showon="customsStyle:1" default="32" />
-				<field name="symbolSize" type="number" min="10" label="MOD_CG_SKILLSET_SYMBOL_SIZE_LABEL" hint="28" showon="customsStyle:1" default="28" />
-				<field name="iconSize" type="number" min="10" label="MOD_CG_SKILLSET_ICON_SIZE_LABEL" hint="28" showon="customsStyle:1" default="28" />
-			</fieldset>
+				<field name="titleColor" type="color" label="MOD_CG_SKILLSET_TITLE_COLOR_LABEL" showon="customsStyle:1" default="#42495b" class="half gridauto" />
+				<field name="titleSize" type="number" min="10" label="MOD_CG_SKILLSET_TITLE_SIZE_LABEL" hint="20" showon="customsStyle:1" default="20" class="half gridauto"/>
+				<field name="numberColor" type="color" label="MOD_CG_SKILLSET_NUMBER_COLOR_LABEL" showon="customsStyle:1" default="#373738" class="half gridauto"/>
+				<field name="numberSize" type="number" min="10" label="MOD_CG_SKILLSET_NUMBER_SIZE_LABEL" hint="32" showon="customsStyle:1" default="32" class="half gridauto" />
+				<field name="symbolColor" type="color" label="MOD_CG_SKILLSET_SYMBOL_COLOR_LABEL" showon="customsStyle:1" default="#373738"  class="half gridauto"/>
+				<field name="symbolSize" type="number" min="10" label="MOD_CG_SKILLSET_SYMBOL_SIZE_LABEL" hint="28" showon="customsStyle:1" default="28"  class="half gridauto"/>
+				<field name="iconColor" type="color" label="MOD_CG_SKILLSET_ICON_COLOR_LABEL" showon="customsStyle:1" default="#03a9f5"  class="half gridauto"/>
+				<field name="iconSize" type="number" min="10" label="MOD_CG_SKILLSET_ICON_SIZE_LABEL" hint="28" showon="customsStyle:1" default="28"  class="half gridauto"/>
+				<field name="animationShape" type="radio" label="MOD_CG_SKILLSET_ANIMATION_FORM_LABEL" showon="customsStyle:1" default="0" class="btn-group btn-group-yesno" >
+					<option value="0">JNO</option>
+					<option value="round">MOD_CG_SKILLSET_ANIMATION_ROUND_LABEL</option>
+					<option value="rect">MOD_CG_SKILLSET_ANIMATION_RECTANGLE_LABEL</option>
+                </field>
+				<field name="animationStartColor" type="color" label="MOD_CG_SKILLSET_ANIMATION_STARTCOLOR_LABEL" showon="customsStyle:1[AND]animationShape!:0" default="#8ee58e"  class="half gridauto"/>
+				<field name="animationProgressColor" type="color" label="MOD_CG_SKILLSET_ANIMATION_PROGRESSCOLOR_LABEL" showon="customsStyle:1[AND]animationShape!:0" default="#007eff"  class="half gridauto"/>
+                <field name="animationBackground" type="color" label="MOD_CG_SKILLSET_ANIMBACK_COLOR_LABEL" showon="customsStyle:1[AND]animationShape!:0" default="#d3d3d3" class="half gridauto"/>
+            </fieldset>
 			<fieldset name="advanced">
 				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" default="default" />
 				<field name="moduleclass_sfx" type="textarea" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" rows="3"/>

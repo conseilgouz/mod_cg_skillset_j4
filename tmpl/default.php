@@ -38,71 +38,35 @@ $symbolSize = $params->get('symbolSize', 40);
 $iconSize = $params->get('iconSize', 52);
 
 $customsStyle = $params->get('customsStyle');
-$customsStyle = $params->get('customsStyle');
-$i = 0;
-foreach ($skillsets as $skillset) {
-    $i++;
-}
-if ($i == 1) {
-    $count = 12;
-} elseif ($i == 2) {
-    $count = 6;
-} elseif ($i == 3) {
-    $count = 4;
-} elseif ($i == 4) {
-    $count = 3;
-}
+$animationShape = $params->get('animationShape', 0);
+$animationShape = $params->get('animationShape', 0);
+
+$i = sizeof((array) $skillsets);
+$size = 12 / $i;
+
+Factory::getApplication()->getDocument()->addScriptOptions(
+    'cg_skillset_'.$module->id,
+    array('id' => $module->id,'skillsets' => $i , 'customstyle' => $customsStyle,
+    'titleSize' => $titleSize,'numberSize' => $numberSize,'symbolSize' => $symbolSize,
+    'iconSize' => $iconSize,  'titleColor' => $titleColor, 'numberColor' => $numberColor,
+    'symbolColor' => $symbolColor, 'iconColor' => $iconColor, 'animationShape' => $animationShape)
+);
+
 ?>
-<style>
-	<?php foreach ($skillsets as $index => $skillset) : ?>
-	<?php if ($customsStyle) { ?>#skillset-<?php echo $index; ?>-<?php echo $module->id; ?> .counter-title {
-		font-size: <?php echo $titleSize; ?>px;
-	}
 
-	#skillset-<?php echo $index; ?>-<?php echo $module->id; ?> .counter-number .count {
-		font-size: <?php echo $numberSize; ?>px;
-	}
-
-	#skillset-<?php echo $index; ?>-<?php echo $module->id; ?> .counter-number .symbol {
-		font-size: <?php echo $symbolSize; ?>px;
-	}
-
-	#skillset-<?php echo $index; ?>-<?php echo $module->id; ?> .count-icon {
-		font-size: <?php echo $iconSize; ?>px;
-	}
-
-	<?php } ?><?php if ($customsStyle) { ?>#skillset-<?php echo $index; ?>-<?php echo $module->id; ?> .counter-title {
-		color: <?php echo $titleColor; ?>;
-	}
-
-	#skillset-<?php echo $index; ?>-<?php echo $module->id; ?> .counter-number .count {
-		color: <?php echo $numberColor; ?>;
-	}
-
-	#skillset-<?php echo $index; ?>-<?php echo $module->id; ?> .counter-number .symbol {
-		color: <?php echo $symbolColor; ?>;
-	}
-
-	#skillset-<?php echo $index; ?>-<?php echo $module->id; ?> .count-icon {
-		color: <?php echo $iconColor; ?>;
-	}
-
-	<?php } ?>
-	<?php endforeach; ?>
-</style>
 <div id="cg_skillset<?php echo $module->id; ?>" data="<?php echo $module->id; ?>" class="cg_skillset cg-row counter-sub-container skillset-not-counted <?php if ($params->get('IconPosition') == 'left') {
     echo 'cg-icon-position-left';
 } ?><?php if ($params->get('IconPosition') == 'right') {
     echo 'cg-icon-position-right';
 } ?> ">
 	<?php foreach ($skillsets as $index => $skillset) : ?>
-		<div class="cg-col-12 cg-col-md-6 cg-col-lg-<?php echo $count; ?>" id="skillset-<?php echo $index; ?>-<?php echo $module->id; ?>">
+		<div class="cg-col-12 cg-col-md-6 cg-col-lg-<?php echo $size; ?>" id="skillset-<?php echo $index; ?>-<?php echo $module->id; ?>">
 			<div class="counter-wrapper">
 				<?php if ($params->get('IconPosition') == 'top' or $params->get('IconPosition') == 'right' or $params->get('IconPosition') == 'left') { ?>
 					<?php if ($skillset->skillset_icon_option == 'upload') { ?>
 						<?php if (!empty($skillset->skillset_icon_upload)) { ?>
 							<div class="counter-icon">
-								<img src="<?php echo $skillset->skillset_icon_upload; ?>" alt="<?php echo $skillset->skillset_title; ?>"></img>
+								<img src="<?php echo $skillset->skillset_icon_upload; ?>" alt="<?php echo strip_tags($skillset->skillset_title); ?>"></img>
 							</div>
 						<?php } ?>
 					<?php } elseif ($skillset->skillset_icon_option == 'icon') { ?>
@@ -114,6 +78,10 @@ if ($i == 1) {
 					<?php } ?>
 				<?php } ?>
 				<?php if (!empty($skillset->skillset_title) or !empty($skillset->skillset_number)) { ?>
+                <?php if ($params->get('animationShape', 0)) {
+                    echo "<div class='circular-progress' data-id='".$module->id."' data-progress-color='".$params->get("animationProgressColor", "#007eff")."' data-bg-color='".$params->get("animationStartColor", "#8ee58e")."'>";
+                    echo "<div class='inner-circle' data-id='".$module->id."' data-inner-circle-color='".$params->get("animationBackground", "#d3d3d3")."'></div>";
+                } ?>
 					<div class="counter-text-container">
 						<?php if ($numberPosition == 'above') { ?>
 							<?php if (!empty($skillset->skillset_number)) { ?>
@@ -153,13 +121,16 @@ if ($i == 1) {
 								</p>
 							<?php } ?>
 						<?php } ?>
-					</div>
+						</div>
+                 <?php if ($params->get('animationShape', 0)) {
+                     echo "</div>";
+                 } ?>
 				<?php } ?>
 				<?php if ($params->get('IconPosition') == 'bottom') { ?>
 					<?php if ($skillset->skillset_icon_option == 'upload') { ?>
 						<?php if (!empty($skillset->skillset_icon_upload)) { ?>
 							<div class="counter-icon">
-								<img src="<?php echo $skillset->skillset_icon_upload; ?>" alt="<?php echo $skillset->skillset_title; ?>"></img>
+								<img src="<?php echo $skillset->skillset_icon_upload; ?>" alt="<?php echo strip_tags($skillset->skillset_title); ?>"></img>
 							</div>
 						<?php } ?>
 					<?php } elseif ($skillset->skillset_icon_option == 'icon') { ?>

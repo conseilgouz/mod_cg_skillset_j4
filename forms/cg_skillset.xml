@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form>
-	<fieldset name="cg_skillset" label="MOD_CG_SKILLSET_CREATE_LABE">
-		<field name="skillset_title" required="true" label="JGLOBAL_TITLE" description="MOD_CG_SKILLSET_TITLE_DESC" type="text" />
+	<fieldset name="cg_skillset" label="MOD_CG_SKILLSET_CREATE_LABEL">
+		<field name="skillset_title" required="true" label="JGLOBAL_TITLE" description="MOD_CG_SKILLSET_TITLE_DESC" type="text" filter="raw"/>
 		<field name="skillset_number" label="MOD_CG_SKILLSET_NUMBER_LABEL" description="MOD_CG_SKILLSET_NUMBER_DESC" type="text" />
 		<field name="skillset_enable_symbol" type="radio" label="MOD_CG_SKILLSET_ENABLE_SYMBOL_LABEL" description="MOD_CG_SKILLSET_ENABLE_SYMBOL_DESC" class="btn-group btn-group-yesno" default="1">
 			<option value="1">JYES</option>
