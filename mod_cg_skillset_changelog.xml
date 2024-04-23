@@ -2,6 +2,20 @@
 	<changelog>
 		<element>mod_cg_skillset</element>
 		<type>Module</type>
+		<version>1.1.1</version>
+        <note>
+            <item>Update : 23/04/2024</item>
+        </note>
+		<addition>
+			<item>Add FR language file</item>
+		</addition>
+        <change>
+            <item>Rectangle: define height</item>
+        </change>
+    </changelog>
+	<changelog>
+		<element>mod_cg_skillset</element>
+		<type>Module</type>
 		<version>1.1.0</version>
         <note>
             <item>Update : 23/04/2024</item>

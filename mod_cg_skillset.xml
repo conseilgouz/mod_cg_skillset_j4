@@ -3,7 +3,7 @@
 	<name>CG SkillSet</name>
 	<author>ConseilGouz</author>
 	<creationDate>2021-04-23</creationDate>
-	<version>1.1.0</version>
+	<version>1.1.1</version>
 	<authorEmail>pascal.leconte@conseilgouz.com</authorEmail>
 	<authorUrl>https://www.conseilgouz.com</authorUrl>
 	<description>MOD_CG_SKILLSET_XML_DESCRIPTION</description>
@@ -26,6 +26,8 @@
 	<languages folder="language">
 		<language tag="en-GB">en-GB/mod_cg_skillset.ini</language>
 		<language tag="en-GB">en-GB/mod_cg_skillset.sys.ini</language>
+		<language tag="fr-FR">fr-FR/mod_cg_skillset.ini</language>
+		<language tag="fr-FR">fr-FR/mod_cg_skillset.sys.ini</language>
 	</languages>
 	<config>
 		<fields name="params">
@@ -61,14 +63,25 @@
 				<field name="symbolSize" type="number" min="10" label="MOD_CG_SKILLSET_SYMBOL_SIZE_LABEL" hint="28" showon="customsStyle:1" default="28"  class="half gridauto"/>
 				<field name="iconColor" type="color" label="MOD_CG_SKILLSET_ICON_COLOR_LABEL" showon="customsStyle:1" default="#03a9f5"  class="half gridauto"/>
 				<field name="iconSize" type="number" min="10" label="MOD_CG_SKILLSET_ICON_SIZE_LABEL" hint="28" showon="customsStyle:1" default="28"  class="half gridauto"/>
-				<field name="animationShape" type="radio" label="MOD_CG_SKILLSET_ANIMATION_FORM_LABEL" showon="customsStyle:1" default="0" class="btn-group btn-group-yesno" >
+				<field name="animationShape" type="radio" 
+                    label="MOD_CG_SKILLSET_ANIMATION_FORM_LABEL" description="MOD_CG_SKILLSET_ANIMATION_FORM_DESC" 
+                    showon="customsStyle:1" default="0" class="btn-group btn-group-yesno" >
 					<option value="0">JNO</option>
 					<option value="round">MOD_CG_SKILLSET_ANIMATION_ROUND_LABEL</option>
 					<option value="rect">MOD_CG_SKILLSET_ANIMATION_RECTANGLE_LABEL</option>
                 </field>
-				<field name="animationStartColor" type="color" label="MOD_CG_SKILLSET_ANIMATION_STARTCOLOR_LABEL" showon="customsStyle:1[AND]animationShape!:0" default="#8ee58e"  class="half gridauto"/>
-				<field name="animationProgressColor" type="color" label="MOD_CG_SKILLSET_ANIMATION_PROGRESSCOLOR_LABEL" showon="customsStyle:1[AND]animationShape!:0" default="#007eff"  class="half gridauto"/>
-                <field name="animationBackground" type="color" label="MOD_CG_SKILLSET_ANIMBACK_COLOR_LABEL" showon="customsStyle:1[AND]animationShape!:0" default="#d3d3d3" class="half gridauto"/>
+				<field name="animationStartColor" type="color" 
+                    label="MOD_CG_SKILLSET_ANIMATION_STARTCOLOR_LABEL" description="MOD_CG_SKILLSET_ANIMATION_STARTCOLOR_DESC" 
+                    showon="customsStyle:1[AND]animationShape!:0" default="#8ee58e"  class="half gridauto"/>
+				<field name="animationProgressColor" type="color" 
+                    label="MOD_CG_SKILLSET_ANIMATION_PROGRESSCOLOR_LABEL" description="MOD_CG_SKILLSET_ANIMATION_PROGRESSCOLOR_DESC" 
+                    showon="customsStyle:1[AND]animationShape!:0" default="#007eff"  class="half gridauto"/>
+                <field name="animationBackground" type="color" 
+                    label="MOD_CG_SKILLSET_ANIMBACK_COLOR_LABEL" description="MOD_CG_SKILLSET_ANIMBACK_COLOR_DESC" 
+                    showon="customsStyle:1[AND]animationShape!:0" default="#d3d3d3" class="half gridauto"/>
+                <field name="animationHeight" type="number" min="10" default="120" 
+                    label="MOD_CG_SKILLSET_ANIMHEIGHT_LABEL"  description="MOD_CG_SKILLSET_ANIMHEIGHT_DESC"
+                    showon="customsStyle:1[AND]animationShape:rect" class="half gridauto"/>
             </fieldset>
 			<fieldset name="advanced">
 				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" default="default" />

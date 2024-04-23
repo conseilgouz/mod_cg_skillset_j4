@@ -39,7 +39,7 @@ $iconSize = $params->get('iconSize', 52);
 
 $customsStyle = $params->get('customsStyle');
 $animationShape = $params->get('animationShape', 0);
-$animationShape = $params->get('animationShape', 0);
+$animationHeight = $params->get('animationHeight', 120);
 
 $i = sizeof((array) $skillsets);
 $size = 12 / $i;
@@ -49,7 +49,8 @@ Factory::getApplication()->getDocument()->addScriptOptions(
     array('id' => $module->id,'skillsets' => $i , 'customstyle' => $customsStyle,
     'titleSize' => $titleSize,'numberSize' => $numberSize,'symbolSize' => $symbolSize,
     'iconSize' => $iconSize,  'titleColor' => $titleColor, 'numberColor' => $numberColor,
-    'symbolColor' => $symbolColor, 'iconColor' => $iconColor, 'animationShape' => $animationShape)
+    'symbolColor' => $symbolColor, 'iconColor' => $iconColor, 
+    'animationShape' => $animationShape,'animationHeight' => $animationHeight)
 );
 
 ?>

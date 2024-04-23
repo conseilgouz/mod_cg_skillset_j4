@@ -70,7 +70,7 @@ const sizes = (EL) => {
     }
     if (options.animationShape == "rect") {
         EL.style.width=  (val + 40) + 'px';
-        EL.style.height= (val -10) + 'px';
+        EL.style.height= options.animationHeight + 'px';
         EL.style.borderRadius = "30%";
     }
 }
