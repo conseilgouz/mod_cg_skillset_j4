@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 CG Skill Set (from JD SkillSet 1.7)
-=======
-# mod_cg_skillset_j4
- CG Skill Set (from JD SkillSet 1.7)
->>>>>>> 4c9704f41fe71fe403bc722755cbbc538179f2b1
 
 Add counters display to your website.
 
