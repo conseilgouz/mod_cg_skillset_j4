@@ -2,12 +2,12 @@
 <extension type="module" version="4.0" client="site" method="upgrade">
 	<name>CG SkillSet</name>
 	<author>ConseilGouz</author>
-	<creationDate>2021-04-29</creationDate>
-	<version>1.1.2</version>
+	<creationDate>2025-09-05</creationDate>
+	<version>1.2.0</version>
 	<authorEmail>pascal.leconte@conseilgouz.com</authorEmail>
 	<authorUrl>https://www.conseilgouz.com</authorUrl>
 	<description>MOD_CG_SKILLSET_XML_DESCRIPTION</description>
-	<copyright>Copyright (C) 2024 Conseilgouz. All rights reserved.</copyright>
+	<copyright>Copyright (C) 2025 Conseilgouz. All rights reserved.</copyright>
 	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
 	<namespace path="src">ConseilGouz\Module\CGSkillset</namespace>
 	<changelogurl>https://raw.githubusercontent.com/conseilgouz/mod_cg_skillset_j4/master/mod_cg_skillset_changelog.xml</changelogurl>	
