@@ -1,7 +1,7 @@
-CG Skill Set (from JD SkillSet 1.7)
+CG Skill Set
 =======
 
- CG Skill Set (from JD SkillSet 1.7)
+CG Skill Set (from JD SkillSet 1.7)
 
 Add counters display to your website.
 
