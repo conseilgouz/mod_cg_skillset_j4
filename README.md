@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 CG Skill Set (from JD SkillSet 1.7)
 =======
 
