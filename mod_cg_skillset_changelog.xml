@@ -6,9 +6,9 @@
         <note>
             <item>Update : 17/09/2025</item>
         </note>
-        <fix>
-            <change>Use ConseilGouz Library</change>
-        </fix>
+        <change>
+            <item>Use ConseilGouz Library</item>
+        </change>
     </changelog>
 	<changelog>
 		<element>mod_cg_skillset</element>
