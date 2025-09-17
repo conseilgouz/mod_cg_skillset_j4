@@ -2,6 +2,17 @@
 	<changelog>
 		<element>mod_cg_skillset</element>
 		<type>Module</type>
+		<version>1.2.1</version>
+        <note>
+            <item>Update : 17/09/2025</item>
+        </note>
+        <fix>
+            <change>Use ConseilGouz Library</change>
+        </fix>
+    </changelog>
+	<changelog>
+		<element>mod_cg_skillset</element>
+		<type>Module</type>
 		<version>1.2.0</version>
         <note>
             <item>Update : 05/09/2025</item>
